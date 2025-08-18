@@ -1,4 +1,4 @@
-import dbConnect, { collectionsNames } from "@/dbConnect";
+import dbConnect, { collectionsNames } from "@/lib/dbConnect";
 import Image from "next/image";
 import Link from "next/link";
 

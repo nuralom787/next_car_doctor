@@ -33,8 +33,10 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     {navItems}
                 </div>
-                <div className="navbar-end">
-                    <Link href={`/appointment`}>Appointment</Link>
+                <div className="navbar-end gap-6">
+                    <Link className="btn btn-ghost" href={`/login`}>Login</Link>
+                    <Link className="btn btn-ghost" href={`/register`}>Register</Link>
+                    <Link className="btn btn-ghost" href={`/appointment`}>Appointment</Link>
                 </div>
             </section>
         </div>
