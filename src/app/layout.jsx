@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar";
 
 const poppins = Poppins({
-  // variable: "",
   weight: "400",
   subsets: ["latin"],
 });

@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ServicesSection = async () => {
-    const data = await dbConnect(collectionsNames.servicesCollection).find().toArray();
+    const ServicesData = dbConnect(collectionsNames.servicesCollection);
+    const services = await ServicesData.find({}).toArray();
 
     return (
         <div className="grid grid-cols-12 gap-8">
             {
-                data?.map(service => <div key={service._id} className="card w-full shadow-sm col-span-12 md:col-span-6 lg:col-span-4">
+                services?.map(service => <div key={service._id} className="card w-full shadow-sm col-span-12 md:col-span-6 lg:col-span-4">
                     <figure className="w-full h-full flex justify-center items-center">
                         <Image
                             src={service.img}

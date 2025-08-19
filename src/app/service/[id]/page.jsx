@@ -6,7 +6,8 @@ import checkoutBanner from '../../../../public/assets/images/checkout/checkout.p
 
 const ServiceDetails = async ({ params }) => {
     const id = await params;
-    const service = await dbConnect(collectionsNames.servicesCollection).findOne({ _id: new ObjectId(id) });
+    const servicesData = dbConnect(collectionsNames.servicesCollection);
+    const service = await servicesData.findOne({ _id: new ObjectId(id) });
 
     const { _id, img, title, price, description, facility } = service;
 
