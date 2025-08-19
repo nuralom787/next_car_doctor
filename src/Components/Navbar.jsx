@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from '../../public/assets/logo.svg';
+import AuthOptions from "./AuthOptions";
 
 const Navbar = () => {
     const navItems = <ul className="inline-flex items-center gap-14">
@@ -34,8 +35,7 @@ const Navbar = () => {
                     {navItems}
                 </div>
                 <div className="navbar-end gap-6">
-                    <Link className="btn btn-ghost" href={`/login`}>Login</Link>
-                    <Link className="btn btn-ghost" href={`/register`}>Register</Link>
+                    <AuthOptions />
                     <Link className="btn btn-ghost" href={`/appointment`}>Appointment</Link>
                 </div>
             </section>

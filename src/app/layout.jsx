@@ -1,6 +1,8 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/Components/Navbar";
+import { ToastContainer } from 'react-toastify';
+import NextAuthSessionProviders from "@/Providers/NextAuthSessionProviders";
 
 const poppins = Poppins({
   weight: "400",
@@ -15,12 +17,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${poppins.className} dark:bg-white text-[#151515]`}>
-        <Navbar />
-        <main>
-          {children}
-        </main>
-      </body>
+      <ToastContainer />
+      <NextAuthSessionProviders>
+        <body className={`${poppins.className} dark:bg-white text-[#151515]`}>
+          <Navbar />
+          <main>
+            {children}
+          </main>
+        </body>
+      </NextAuthSessionProviders>
     </html>
   );
 }

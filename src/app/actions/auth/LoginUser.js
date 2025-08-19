@@ -5,16 +5,18 @@ import dbConnect, { collectionsNames } from "@/lib/dbConnect";
 
 const LoginUser = async (payload) => {
     const { email, password } = payload;
-    const usersCollections = dbConnect(collectionsNames.usersCollections);
+    const users = dbConnect(collectionsNames.usersCollections);
 
     try {
-        const user = await usersCollections.findOne({ email: email });
-        const isPasswordOk = bcrypt.compare(user.password, password);
+        const user = await users.findOne({ email: email });
+        const isPasswordOk = await bcrypt.compare(password, user.password);
+
         if (user && isPasswordOk) {
             const userData = { _id: user._id.toString(), name: user.name, email: user.email }
             return userData;
         }
-        return { message: "Wrong email or password!" }
+
+        return null
     } catch (error) {
         // console.log(error)
         return error

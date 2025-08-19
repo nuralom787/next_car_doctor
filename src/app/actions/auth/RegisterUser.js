@@ -9,7 +9,7 @@ const RegisterUser = async (payload) => {
     try {
         const user = await usersCollections.findOne({ email: payload.email });
         if (user) {
-            return { message: "user already exist" };
+            return { message: "User already exist!" };
         }
         const hashedPassword = await bcrypt.hash(payload.password, 10);
         payload.password = hashedPassword;

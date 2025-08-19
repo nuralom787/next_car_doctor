@@ -11,13 +11,12 @@ export const authOptions = {
                 Password: { label: "Password", type: "password" }
             },
             async authorize(credentials, req) {
-                console.log("from route.js cre: ", credentials);
                 const user = await LoginUser(credentials);
 
                 if (user) {
-                    console.log("from route.js: ", user)
                     return user
-                } else {
+                }
+                else {
                     return null
                 }
             }
