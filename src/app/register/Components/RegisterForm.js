@@ -1,6 +1,7 @@
 'use client';
 
 import RegisterUser from "@/app/actions/auth/RegisterUser";
+import SocialsAuth from "@/Components/SocialsAuth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -98,6 +99,7 @@ const RegisterForm = () => {
                 <div className="text-center">
                     <span className="text-sm font-semibold">Already Have an account? Please <Link className="hover:underline text-[#FF3811]" href={"/login"}>Login</Link></span>
                 </div>
+                <SocialsAuth />
             </form>
         </div>
     );

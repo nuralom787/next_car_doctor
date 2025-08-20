@@ -36,7 +36,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-6">
                     <AuthOptions />
-                    <Link className="btn btn-ghost" href={`/appointment`}>Appointment</Link>
+                    <Link className="btn btn-ghost rounded-md" href={`/appointment`}>Appointment</Link>
                 </div>
             </section>
         </div>

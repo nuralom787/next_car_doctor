@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { FaArrowRight } from "react-icons/fa";
 import { useState } from "react";
+import SocialsAuth from "@/Components/SocialsAuth";
 
 
 const Login = () => {
@@ -84,6 +85,7 @@ const Login = () => {
                 <div className="text-center">
                     <span className="text-sm font-semibold">New Hare? Please <Link className="hover:underline text-[#FF3811]" href={"/register"}>Register</Link></span>
                 </div>
+                <SocialsAuth />
             </form>
         </div>
     );
