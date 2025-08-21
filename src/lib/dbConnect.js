@@ -3,7 +3,8 @@ const uri = process.env.MONGODB_URI;
 
 export const collectionsNames = {
     servicesCollection: "services",
-    usersCollections: "users"
+    usersCollections: "users",
+    bookingsCollections: "bookings"
 }
 
 const dbConnect = (collectionName) => {
