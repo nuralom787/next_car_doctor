@@ -3,7 +3,7 @@ import React from 'react';
 
 const Checkout = async ({ params }) => {
     const id = await params.id;
-    const res = await fetch(`${process.env.NEXT_BASE_URL}/api/service/${id}`);
+    const res = await fetch(`${process.env.NEXT_BASE_URL}/api/service/${id}`, { cache: "no-store" });
     const service = await res.json();
 
 
