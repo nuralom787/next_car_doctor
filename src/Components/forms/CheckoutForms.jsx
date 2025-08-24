@@ -33,7 +33,7 @@ const CheckoutForms = ({ service }) => {
         };
 
         try {
-            const res = await fetch(`http://localhost:3000/api/service`, {
+            const res = await fetch(`https://nextcardoctor.vercel.app/api/service`, {
                 method: "POST",
                 body: JSON.stringify(payload)
             })

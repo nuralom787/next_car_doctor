@@ -9,7 +9,7 @@ const ServiceDetails = async ({ params }) => {
     const id = await params.id;
     // const servicesData = dbConnect(collectionsNames.servicesCollection);
     // const service = await servicesData.findOne({ _id: new ObjectId(id) });
-    const res = await fetch(`${process.env.NEXT_BASE_URL}/api/service/${id}`, { cache: "no-store" });
+    const res = await fetch(`https://nextcardoctor.vercel.app/api/service/${id}`, { cache: "no-store" });
     const service = await res.json();
 
 

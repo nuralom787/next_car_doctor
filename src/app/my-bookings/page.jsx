@@ -2,8 +2,8 @@ import BookingsTables from "@/Components/tables/BookingsTables";
 import { headers } from "next/headers";
 
 const loadBookings = async () => {
-    const res = await fetch(`http://localhost:3000/api/service`, {
-        headers: await headers()
+    const res = await fetch(`https://nextcardoctor.vercel.app/api/service`, {
+        headers: new Headers(await headers())
     })
     const data = await res.json();
     return data;
