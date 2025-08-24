@@ -2,17 +2,27 @@
 
 import { useRouter } from "next/navigation";
 import { FaTrash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const DeleteBookingBtn = ({ id }) => {
     const router = useRouter();
     const deleteBooking = async (id) => {
         // console.log(id)
-        const res = await fetch(`http://localhost:3000/api/service/${id}`, {
+        const res = fetch(`http://localhost:3000/api/service/${id}`, {
             method: "DELETE"
         })
-        const data = await res.json();
+            .then(res => res.json())
+
+        toast.promise(res, { pending: "Deleting Booking...", error: "Something want's wrong!", success: "Booking Deleted Successfully!" }, {
+            position: "top-center",
+            autoClose: 2000
+        });
+
+        const data = await res
         router.refresh();
-        console.log(data);
+        if (data.deletedCount === 1) {
+            console.log(data);
+        }
     };
 
 

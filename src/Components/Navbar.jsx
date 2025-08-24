@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from '../../public/assets/logo.svg';
+import logo from '../../public/vercel.svg';
 import AuthOptions from "./AuthOptions";
 
 const Navbar = () => {
